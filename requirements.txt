@@ -1,0 +1,10 @@
+numpy~=1.26.4
+mss~=9.0.1
+pynput~=1.7.7
+torch~=2.4.0
+scikit-learn~=1.5.1
+opencv-python~=4.10.0.84
+tensorflow~=2.17.0
+stable-baselines3~=2.3.2
+gymnasium>=0.28.1,<0.30
+torchvision~=0.19.0
