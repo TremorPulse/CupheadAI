@@ -1,7 +1,6 @@
 import sys
 import os
 
-# Ensure the src directory is in the Python path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 import logging
@@ -34,7 +33,7 @@ if __name__ == "__main__":
     launch_cuphead()
     register_env()
 
-    # Initialize environment
+    # initialize environment
     env = gym.make('CupheadEnv-v0')
 
     logging.info("Starting training of Cuphead AI...")

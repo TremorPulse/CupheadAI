@@ -16,7 +16,7 @@ def load_and_preprocess_data(data_dir):
             X.append(data['frames'])
             Y.append(data['actions'])
 
-    # Process data in chunks
+    # process data in chunks
     chunk_size = 1000
     for i in range(0, len(X), chunk_size):
         X_chunk = np.concatenate(X[i:i + chunk_size], axis=0)
@@ -36,14 +36,11 @@ def get_dataloader(data_dir, batch_size=4):
     return DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4)
 
 
-# Set up paths
 base_dir = r"C:\Users\gokua\Downloads\Cuphead Dataset.v2-cuphead-dataset.coco"
 train_dir = os.path.join(base_dir, 'train')
 valid_dir = os.path.join(base_dir, 'valid')
 
-# Create dataloaders
 train_loader = get_dataloader(train_dir)
 valid_loader = get_dataloader(valid_dir)
 
-# Initialize and train the object detector
 object_detector = ObjectDetector()

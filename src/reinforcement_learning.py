@@ -37,13 +37,11 @@ def train_rl_model(env):
         features_extractor_kwargs=dict(features_dim=64),
     )
 
-    # Adjust buffer size by lowering n_steps
     model = PPO("CnnPolicy", env, verbose=1, policy_kwargs=policy_kwargs,
-                n_steps=1024,  # Reduce from 2048 to 1024 to lower memory usage
+                n_steps=1024,  # was 2048 to 1024 - lower memory usage
                 batch_size=64, n_epochs=10,
                 learning_rate=3e-4, clip_range=0.2, device=device)
 
-    # Training the model
     model.learn(total_timesteps=50000)
     model.save('models/rl_model.zip')
     return model
@@ -68,8 +66,6 @@ def load_rl_model():
         print(f"An error occurred while loading the model: {e}")
         raise
 
-
-# Ensure TensorFlow uses GPU if available (if you use TensorFlow)
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
     try:
