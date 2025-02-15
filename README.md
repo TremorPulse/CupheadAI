@@ -5,7 +5,7 @@ Hybrid approach that combines Reinforcement Learning and Object Detection to att
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/cuphead-ai.git
+   git clone https://github.com/TremorPulse/cuphead-ai.git
    cd cuphead-ai
    ```
 
